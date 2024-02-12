@@ -38,20 +38,20 @@ const SiteCharts = ({ siteDetails }) => {
         {siteDetails.status !== "ok" ? (
           siteDetails.average >= 70 ? (
             <Alert
-              message="当前站点出现异常，请检查站点状态"
+              message="There is an exception on the current site, please check the site status."
               type="warning"
               showIcon
             />
           ) : (
             <Alert
-              message="当前站点持续异常，请立即检查站点状态或从监控项目中删除"
+              message="The current site continues to be abnormal, please check the site status immediately or delete it from the monitoring project"
               type="error"
               showIcon
             />
           )
         ) : (
           <Alert
-            message="当前站点状态正常，请继续保持哦"
+            message="The current site status is normal, please continue to maintain it."
             type="success"
             showIcon
           />
@@ -63,7 +63,7 @@ const SiteCharts = ({ siteDetails }) => {
             items={[
               {
                 key: "all-data",
-                label: "站点详情初始数据",
+                label: "Site details initial data",
                 children: <p>{JSON.stringify(siteDetails)}</p>,
               },
             ]}
