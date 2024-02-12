@@ -44,7 +44,7 @@ export const getSiteData = async (apikey, days, cache, status) => {
           const delay = Math.floor(Math.random() * (1200 - 500 + 1)) + 500;
           setTimeout(() => {
             const processedData = dataProcessing(data, dates);
-            console.log("触发缓存");
+            console.log("trigger cache");
             changeSite(processedData, status);
             resolve(processedData);
           }, delay);
@@ -82,7 +82,7 @@ export const getSiteData = async (apikey, days, cache, status) => {
     return processedData;
   } catch (error) {
     status.changeSiteState("wrong");
-    console.error("获取监控数据时出错：" + error);
+    console.error("An error occurred while obtaining monitoring data: " + error);
   }
 };
 
@@ -97,7 +97,7 @@ const getMonitorsData = async (postdata, status) => {
     const response = await axios.post(globalApi, postdata, { timeout: 10000 });
     return response.data;
   } catch (error) {
-    console.error("获取监控数据时出错：", error);
+    console.error("An error occurred while obtaining monitoring data:", error);
     status.changeSiteState("wrong");
   }
 };
@@ -202,7 +202,7 @@ const changeSite = (data, status) => {
       unknownCount,
     });
   } catch (error) {
-    console.error("更改站点状态时发生错误：", error);
+    console.error("An error occurred while changing site status: ", error);
     // 处理错误状态
     status.changeSiteState("error");
   }
