@@ -46,7 +46,7 @@ const Footer = () => {
             </React.Fragment>
           ) : null}
           &nbsp;|&nbsp;
-          <!--<img src="https://beian.mps.gov.cn/img/logo01.dd7ff50e.png" height="18"></img>-->
+          
           {siteBeian ? (
             <React.Fragment>
               <CustomLink to={siteBeianUrl} text={siteBeian} />
