@@ -22,7 +22,7 @@ const SiteCharts = ({ siteDetails }) => {
     offsetY: 0,
     meta: {
       value: {
-        alias: "当日可用率",
+        alias: "Availability for the day",
         formatter: (v) => `${v}%`,
       },
     },
