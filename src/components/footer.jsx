@@ -46,7 +46,7 @@ const Footer = () => {
             </React.Fragment>
           ) : null}
           &nbsp;|&nbsp;
-          
+          <img src="https://scalebranding.com/wp-content/uploads/2022/02/583.jpg" height="18"></img>
           {siteBeian ? (
             <React.Fragment>
               <CustomLink to={siteBeianUrl} text={siteBeian} />
