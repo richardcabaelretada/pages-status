@@ -17,11 +17,11 @@ const Header = observer(({ getSiteData }) => {
 
   // 状态文本
   const statusNames = {
-    loading: "站点状态加载中",
-    error: "部分站点出现异常",
-    allError: "全部站点出现异常",
-    normal: "所有站点运行正常",
-    wrong: "数据请求失败",
+    loading: "Site status loading",
+    error: "Some sites are experiencing abnormalities",
+    allError: "All sites are abnormal",
+    normal: "All sites are running normally",
+    wrong: "Data request failed",
   };
 
   // 刷新状态
@@ -31,7 +31,7 @@ const Header = observer(({ getSiteData }) => {
       messageApi.open({
         key: "updata",
         type: "warning",
-        content: "请稍后再尝试刷新",
+        content: "Please try refreshing again later",
       });
       return false;
     }
@@ -72,18 +72,18 @@ const Header = observer(({ getSiteData }) => {
                   timeout={300}
                 >
                   {status.siteState === "loading" ? (
-                    <span>数据加载中...</span>
+                    <span>loading...</span>
                   ) : status.siteState === "wrong" ? (
-                    <span>这可能是临时性问题，请刷新后重试</span>
+                    <span>This may be a temporary problem, please refresh and try again</span>
                   ) : (
                     <div className="time">
                       <span className="last-update">
-                        {`上次更新于 ${
+                        {`Last updated on ${
                           formatTimestamp(cache.siteData?.timestamp).justTime
                         }`}
                       </span>
                       <div className="update">
-                        <span>更新频率 5 分钟</span>
+                        <span>Update frequency 5 minutes</span>
                         <Refresh className="refresh" onClick={refreshStatus} />
                       </div>
                     </div>
@@ -101,7 +101,7 @@ const Header = observer(({ getSiteData }) => {
               {status.siteOverview ? (
                 <div className="overview">
                   <div className="count">
-                    <span className="name">站点总数</span>
+                    <span className="name">Total number of sites</span>
                     <CountUp
                       className="num"
                       end={status.siteOverview.count}
@@ -110,7 +110,7 @@ const Header = observer(({ getSiteData }) => {
                   </div>
                   <div className="status-num">
                     <div className="ok-count">
-                      <span className="name">正常</span>
+                      <span className="name">normal</span>
                       <CountUp
                         className="num"
                         end={status.siteOverview.okCount}
@@ -118,7 +118,7 @@ const Header = observer(({ getSiteData }) => {
                       />
                     </div>
                     <div className="down-count">
-                      <span className="name">异常</span>
+                      <span className="name">abnormal</span>
                       <span className="num">
                         <CountUp
                           className="num"
@@ -129,7 +129,7 @@ const Header = observer(({ getSiteData }) => {
                     </div>
                     {status.siteOverview?.unknownCount ? (
                       <div className="unknownCount-count">
-                        <span className="name">未知</span>
+                        <span className="name">unknown</span>
                         <span className="num">
                           <CountUp
                             className="num"
