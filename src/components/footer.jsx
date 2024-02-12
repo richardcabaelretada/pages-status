@@ -31,9 +31,9 @@ const Footer = () => {
           &nbsp;Version&nbsp;{Package.version}
         </p> */}
         <p>
-          基于&nbsp;
+          Based&nbsp;
           <CustomLink to="https://uptimerobot.com/" text="UptimeRobot" />
-          &nbsp;接口&nbsp;|&nbsp;检测频率 5 分钟
+          &nbsp;Interface&nbsp;|&nbsp;Detection frequency 5 minutes
         </p>
         <p>
           Copyright&nbsp;&copy;&nbsp;2023&nbsp;-&nbsp;{new Date().getFullYear()}
