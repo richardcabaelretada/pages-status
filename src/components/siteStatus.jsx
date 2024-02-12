@@ -106,7 +106,7 @@ const SiteStatus = ({ siteData, days, status }) => {
                     })}
                   </div>
                   <div className="summary">
-                    <div className="now">今天</div>
+                    <div className="now">Today</div>
                     <div className="note">
                       {site.total.times
                         ? `recently ${days} Failure within days ${
@@ -151,7 +151,7 @@ const SiteStatus = ({ siteData, days, status }) => {
                   location.reload();
                 }}
               >
-                重试
+                Retry
               </Button>
             }
           />
