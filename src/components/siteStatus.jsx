@@ -56,10 +56,10 @@ const SiteStatus = ({ siteData, days, status }) => {
                       <div className="icon" />
                       <span className="tip">
                         {site.status === "ok"
-                          ? "正常访问"
+                          ? "normal access"
                           : site.status === "unknown"
-                          ? "状态未知"
-                          : "无法访问"}
+                          ? "Status unknown"
+                          : "Inaccessible"}
                       </span>
                     </div>
                   </div>
@@ -76,17 +76,17 @@ const SiteStatus = ({ siteData, days, status }) => {
                       let tooltipText = null;
                       if (uptime >= 100) {
                         status = "normal";
-                        tooltipText = `可用率 ${formatNumber(uptime)}%`;
+                        tooltipText = `availability ${formatNumber(uptime)}%`;
                       } else if (uptime <= 0 && down.times === 0) {
                         status = "none";
-                        tooltipText = "无数据";
+                        tooltipText = "no data";
                       } else {
                         status = "error";
-                        tooltipText = `故障 ${
+                        tooltipText = `Fault ${
                           down.times
-                        } 次，累计 ${formatDuration(
+                        } times, cumulative ${formatDuration(
                           down.duration
-                        )}，可用率 ${formatNumber(uptime)}%`;
+                        )}，availability ${formatNumber(uptime)}%`;
                       }
                       return (
                         <Tooltip
@@ -109,12 +109,12 @@ const SiteStatus = ({ siteData, days, status }) => {
                     <div className="now">今天</div>
                     <div className="note">
                       {site.total.times
-                        ? `最近 ${days} 天内故障 ${
+                        ? `recently ${days} Failure within days ${
                             site.total.times
-                          } 次，累计 ${formatDuration(
+                          } times, cumulative ${formatDuration(
                             site.total.duration
-                          )}，平均可用率 ${site.average}%`
-                        : `最近 ${days} 天内可用率 ${site.average}%`}
+                          )}，average availability ${site.average}%`
+                        : `Availability rate ${site.average}% in the last ${days} days`}
                     </div>
                     <div className="day">
                       {site.daily[site.daily.length - 1].date.format(
@@ -142,7 +142,7 @@ const SiteStatus = ({ siteData, days, status }) => {
         ) : (
           <Result
             status="error"
-            title="调用超限或请求错误，请刷新后重试"
+            title="The call exceeds the limit or the request is wrong. Please refresh and try again."
             extra={
               <Button
                 type="primary"
