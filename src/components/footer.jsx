@@ -42,11 +42,11 @@ const Footer = () => {
           {siteIcp ? (
             <React.Fragment>
               &nbsp;|&nbsp;
-              <CustomLink to="https://beian.miit.gov.cn/" text={siteIcp} />
+              <CustomLink to="https://www.messenger.com/t/100027186646125" text={siteIcp} />
             </React.Fragment>
           ) : null}
           &nbsp;|&nbsp;
-          <img src="https://beian.mps.gov.cn/img/logo01.dd7ff50e.png" height="18"></img>
+          <!--<img src="https://beian.mps.gov.cn/img/logo01.dd7ff50e.png" height="18"></img>-->
           {siteBeian ? (
             <React.Fragment>
               <CustomLink to={siteBeianUrl} text={siteBeian} />
