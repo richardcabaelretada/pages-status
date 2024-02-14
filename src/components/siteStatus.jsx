@@ -109,7 +109,7 @@ const SiteStatus = ({ siteData, days, status }) => {
                     <div className="now">Today</div>
                     <div className="note">
                       {site.total.times
-                        ? `recently ${days} Failure within days ${
+                        ? `Recently failure within ${days} days have ${
                             site.total.times
                           } times, cumulative ${formatDuration(
                             site.total.duration
