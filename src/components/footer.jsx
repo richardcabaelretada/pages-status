@@ -26,13 +26,13 @@ const Footer = () => {
         {/* <p>
           <CustomLink
             text={Package.alia}
-            to="https://github.com/imsyy/site-status"
+            to="https://github.com/zyxmorgan"
           />
           &nbsp;Version&nbsp;{Package.version}
         </p> */}
         <p>
           Based&nbsp;
-          <CustomLink to="https://uptimerobot.com/" text="UptimeRobot" />
+          <CustomLink to="https://statpages.info/" text="StatsPage" />
           &nbsp;Interface&nbsp;|&nbsp;Detection frequency 5 minutes
         </p>
         <p>
@@ -42,7 +42,7 @@ const Footer = () => {
           {siteIcp ? (
             <React.Fragment>
               &nbsp;|&nbsp;
-              <CustomLink to="https://www.messenger.com/t/100027186646125" text={siteIcp} />
+              <CustomLink to="https://github.com/zyxmorgan" text={siteIcp} />
             </React.Fragment>
           ) : null}
           &nbsp;|&nbsp;
