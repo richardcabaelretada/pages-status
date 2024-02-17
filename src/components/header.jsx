@@ -17,10 +17,10 @@ const Header = observer(({ getSiteData }) => {
 
   // 状态文本
   const statusNames = {
-    loading: "Site status loading",
-    error: "Some sites are experiencing abnormalities",
-    allError: "All sites are abnormal",
-    normal: "All sites are running normally",
+    loading: "Sytem status loading",
+    error: "Some system are experiencing abnormalities",
+    allError: "All system are abnormal",
+    normal: "All system are running normally",
     wrong: "Data request failed",
   };
 
@@ -29,7 +29,7 @@ const Header = observer(({ getSiteData }) => {
     const currentTime = Date.now();
     if (currentTime - lastClickTime < 60000) {
       messageApi.open({
-        key: "updata",
+        key: "update",
         type: "warning",
         content: "Please try refreshing again later",
       });
